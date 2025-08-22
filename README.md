@@ -113,20 +113,6 @@ bunfig.toml     # Bun config
 
 ---
 
-## 🧰 Troubleshooting
-
-* **No staged changes** → Stage files with `git add` first.
-* **Missing API key** → Ensure `.env` exists in the tool directory with `DEEPSEEK_API_KEY`.
-* **Debugging DeepSeek responses** →
-  By default, raw API responses are not printed.
-  To debug, open `ai-utils.ts` and uncomment:
-
-  ```ts
-  // console.log('🧪 DeepSeek response:', JSON.stringify(data, null, 2));
-  ```
-
----
-
 ## 📄 License
 
 MIT
