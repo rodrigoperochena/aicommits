@@ -1,0 +1,17 @@
+{
+  "name": "deep-commits",
+  "version": "0.2.0",
+  "bin": {
+    "deep-commits": "index.ts"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "dotenv": "^16.5.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/prompts": "^2.4.9",
+    "bun-types": "^1.2.9"
+  }
+}
