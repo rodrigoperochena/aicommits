@@ -21,11 +21,11 @@
     "prepare": "bun run build"
   },
   "license": "MIT",
-  "repository": "github:taksumaq/aicommits",
+  "repository": "github:rodrigoperochena/aicommits",
   "bugs": {
-    "url": "https://github.com/taksumaq/aicommits/issues"
+    "url": "https://github.com/rodrigoperochena/aicommits/issues"
   },
-  "homepage": "https://github.com/taksumaq/aicommits#readme",
+  "homepage": "https://github.com/rodrigoperochena/aicommits#readme",
   "dependencies": {
     "commander": "^13.1.0",
     "dotenv": "^16.5.0",
