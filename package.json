@@ -1,9 +1,26 @@
 {
-  "name": "deep-commits",
+  "name": "@taksumaq/aicommits",
   "version": "0.2.0",
   "bin": {
-    "deep-commits": "index.ts"
+    "aicommits": "bin/aicommits",
+    "aicommit": "bin/aicommits",
+    "aicmt": "bin/aicommits",
+    "aic": "bin/aicommits"
   },
+  "files": ["dist", "bin", "README.md", "LICENSE"],
+  "engines": { 
+    "node": ">=18" 
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target=node --format=cjs",
+    "prepare": "bun run build"
+  },
+  "license": "MIT",
+  "repository": "github:taksumaq/aicommits",
+  "bugs": { 
+    "url": "https://github.com/taksumaq/aicommits/issues"
+  },
+  "homepage": "https://github.com/taksumaq/aicommits#readme",
   "dependencies": {
     "commander": "^13.1.0",
     "dotenv": "^16.5.0",
