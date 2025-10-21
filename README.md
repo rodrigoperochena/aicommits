@@ -72,44 +72,14 @@ Select files to include in this commit (3 staged total)
  ◯ src/git-utils.ts
 
 🧠 Suggested commit message:
-"fix(env): validate DEEPSEEK_API_KEY before use"
+"Update README with new installation, config, and usage instructions"
 
 ? What do you want to do?
 > ✅ Use this message and commit
   📝 Edit message before committing
   ❌ Cancel
 
-📦 Committing 1 file(s): "fix(env): validate DEEPSEEK_API_KEY before use"
-```
-
-### Explain staged changes
-
-```bash
-deep-commits explain
-```
-
-* CLI shows a checklist of staged files (or you can press Enter to explain all).
-* AI prints a natural-language explanation of what changed.
-
-Example:
-
-```
-🧾 AI Explanation:
-- Added API key validation in utils/env.ts
-- Updated commit command to handle multiselect staged files
-```
-
----
-
-## 🛠️ Project structure
-
-```
-index.ts        # CLI entry (commands, prompts, env load)
-ai-utils.ts     # DeepSeek API calls (commit message + explanation)
-git-utils.ts    # Git helpers (list staged files, diff per file, commit subset)
-utils/env.ts    # API key handling
-package.json    # Bun CLI config
-bunfig.toml     # Bun config
+📦 Committing 1 file(s): "Update README with new installation, config, and usage instructions"
 ```
 
 ---
