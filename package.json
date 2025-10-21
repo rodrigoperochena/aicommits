@@ -1,15 +1,20 @@
 {
   "name": "@taksumaq/aicommits",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "bin": {
     "aicommits": "bin/aicommits",
     "aicommit": "bin/aicommits",
     "aicmt": "bin/aicommits",
     "aic": "bin/aicommits"
   },
-  "files": ["dist", "bin", "README.md", "LICENSE"],
-  "engines": { 
-    "node": ">=18" 
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
   },
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target=node --format=cjs",
@@ -17,7 +22,7 @@
   },
   "license": "MIT",
   "repository": "github:taksumaq/aicommits",
-  "bugs": { 
+  "bugs": {
     "url": "https://github.com/taksumaq/aicommits/issues"
   },
   "homepage": "https://github.com/taksumaq/aicommits#readme",
