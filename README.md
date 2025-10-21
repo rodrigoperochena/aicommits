@@ -1,4 +1,4 @@
-# deep-commits
+# @taksumaq/aicommits
 
 **AI-powered Git commit assistant.**
 Generate commit messages and explanations for your staged changes using the [DeepSeek](https://platform.deepseek.com/) API.
@@ -39,9 +39,7 @@ aicommits config path
 # (optional) read a value back
 aicommits config get DEEPSEEK_API_KEY
 ```
-> The CLI loads this config on startup and will save it at `~/.config/aicommits/config.json` (or `$XDG_CONFIG_HOME/aicommits/config.json`). You can also set `DEEPSEEK_API_KEY` in your shell to override. 👇🏼
-
-You can still override with an environment variable:
+> The CLI loads this config on startup and saves it at `~/.config/aicommits/config.json` (or `$XDG_CONFIG_HOME/aicommits/config.json`). You can also set `DEEPSEEK_API_KEY` with an environment variable to override. 👇🏼
 
 ```bash
 export DEEPSEEK_API_KEY=sk-override-for-this-shell
@@ -66,10 +64,8 @@ aicommits
 Example flow:
 
 ```
-Select files to include in this commit (3 staged total)
- ◯ src/index.ts
- ◉ src/utils/env.ts
- ◯ src/git-utils.ts
+? Select files to include in this commit (1 staged total) › Space to select • Enter to confirm
+ ◉ README.md
 
 🧠 Suggested commit message:
 "Update README with new installation, config, and usage instructions"
