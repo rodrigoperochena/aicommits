@@ -27,19 +27,13 @@ npm i -g @taksumaq/aicommits
 
 ---
 
-## 🔐 Configure your API key so aicommits can use it:
+## 🔐 Configure your API key:
 
 ```bash
-# save your key to your user config
+# save your key to your user config so aicommits can use it
 aicommits config set DEEPSEEK_API_KEY=sk-your-key
-
-# (optional) see where it’s stored
-aicommits config path
-
-# (optional) read a value back
-aicommits config get DEEPSEEK_API_KEY
 ```
-> The CLI loads this config on startup and saves it at `~/.config/aicommits/config.json` (or `$XDG_CONFIG_HOME/aicommits/config.json`). You can also set `DEEPSEEK_API_KEY` with an environment variable to override. 👇🏼
+> aicommits loads this config on startup. You can see where it's stored by running  `aicommits config path` and read its value by running `aicommits config get DEEPSEEK_API_KEY`. You can also set `DEEPSEEK_API_KEY` with an environment variable if you want to override it. 👇🏼
 
 ```bash
 export DEEPSEEK_API_KEY=sk-override-for-this-shell
