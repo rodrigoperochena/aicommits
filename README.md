@@ -12,49 +12,50 @@ Built with [Bun](https://bun.sh/).
 * Interactive multiselect: pick one, many, or all staged files.
 * Lets you **accept, edit, or cancel** AI-generated messages.
 * Additional command to **explain staged changes** in plain English.
-* Uses `.env` (in the tool directory) for API key loading.
-* Quiet execution — no raw diffs spamming your console.
+* Stores config per user at `~/.config/aicommits/config.json` (or `$XDG_CONFIG_HOME/aicommits/config.json`).
+* Works globally after install; no per-project setup needed.
 
 ---
 
-## 📦 Installation
-
-Clone and install:
+## 📦 Install
 
 ```bash
-git clone https://github.com/rodrigoperochena/deep-commits.git
-cd deep-commits
-bun install
-bun link   # makes `deep-commits` available globally
+npm i -g @taksumaq/aicommits
 ```
+
+> Requires Node.js 18+. Check your version with `node --version`
 
 ---
 
-## 🔐 Configuration
+## 🔐 Configure your API key so aicommits can use it:
 
-Create a `.env` file **in the project folder**:
+```bash
+# save your key to your user config
+aicommits config set DEEPSEEK_API_KEY=sk-your-key
 
-```env
-DEEPSEEK_API_KEY=your_api_key_here
+# (optional) see where it’s stored
+aicommits config path
+
+# (optional) read a value back
+aicommits config get DEEPSEEK_API_KEY
 ```
+> The CLI loads this config on startup and will save it at `~/.config/aicommits/config.json` (or `$XDG_CONFIG_HOME/aicommits/config.json`). You can also set `DEEPSEEK_API_KEY` in your shell to override. 👇🏼
 
-> ℹ️ The CLI always loads `.env` from its own directory (`index.ts` enforces this), so the key will be found no matter where you run the command.
+You can still override with an environment variable:
 
----
+```bash
+export DEEPSEEK_API_KEY=sk-override-for-this-shell
+```
 
 ## 🚀 Usage
 
-Stage your changes:
+Stage some changes:
 
 ```bash
-git add .
+git add <files...>
+aicommits
 ```
-
-### Generate a commit
-
-```bash
-deep-commits commit
-```
+> **Tip**: You can use shorter aliases like `aicommit`, `aicmt` or `aic`.
 
 * CLI shows a checklist of staged files.
 * Select one (or several) → AI generates a commit message just for those.
