@@ -4,6 +4,7 @@
 Generate commit messages and explanations for your staged changes using the [DeepSeek](https://platform.deepseek.com/) API.
 Built with [Bun](https://bun.sh/).
 
+[![npm version](https://img.shields.io/npm/v/%40taksumaq%2Faicommits.svg?color=blue)](https://www.npmjs.com/package/@taksumaq/aicommits)
 ---
 
 ## ✨ Features
