@@ -81,4 +81,4 @@ MIT
 
 ---
 
-⚡ **deep-commits** helps you write cleaner commits and understand your changes faster — with AI woven directly into your Git workflow.
+⚡ **@taksumaq/aicommits** helps you write cleaner commits and understand your changes faster — with AI woven directly into your Git workflow.
