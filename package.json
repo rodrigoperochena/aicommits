@@ -17,11 +17,14 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "bun build src/index.ts --outdir dist --target=node --format=cjs",
+    "build": "bun build src/index.ts --outdir dist --target=node --format=cjs --minify --sourcemap=none --external commander --external dotenv --external prompts",
     "prepare": "bun run build"
   },
   "license": "MIT",
-  "repository": "github:rodrigoperochena/aicommits",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoperochena/aicommits.git"
+  },
   "bugs": {
     "url": "https://github.com/rodrigoperochena/aicommits/issues"
   },
