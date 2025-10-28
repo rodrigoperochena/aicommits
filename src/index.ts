@@ -1,11 +1,5 @@
-import path from 'path'
-import dotenv from 'dotenv'
 import { loadConfigIntoEnv, setKey, getKey, configPath } from './config'
 loadConfigIntoEnv() // fills process.env from ~/.config/aicommits/config.json if present
-
-// resolve repo root from dist/
-const rootDir = path.resolve(__dirname, '..')
-dotenv.config({ path: path.join(rootDir, '.env') })
 
 import { Command } from 'commander'
 import prompts from 'prompts'
