@@ -1,26 +1,10 @@
 {
   "name": "@taksumaq/aicommits",
   "version": "0.2.3",
-  "bin": {
-    "aicommits": "bin/aicommits",
-    "aicommit": "bin/aicommits",
-    "aicmt": "bin/aicommits",
-    "aic": "bin/aicommits"
-  },
-  "files": [
-    "dist",
-    "bin",
-    "README.md",
-    "LICENSE"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "build": "bun build src/index.ts --outdir dist --target=node --format=cjs --minify --sourcemap=none --external commander --external dotenv --external prompts",
-    "prepare": "bun run build"
-  },
+  "description": "Tiny AI-powered Git commit assistant (~10 kB).",
+  "keywords": ["git", "commit", "ai", "cli", "deepseek"],
   "license": "MIT",
+  "author": "Rodrigo Perochena",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodrigoperochena/aicommits.git"
@@ -29,11 +13,37 @@
     "url": "https://github.com/rodrigoperochena/aicommits/issues"
   },
   "homepage": "https://github.com/rodrigoperochena/aicommits#readme",
+
+  "publishConfig": { "access": "public" },
+  "packageManager": "bun@1.3.0",
+
+  "bin": {
+    "aicommits": "bin/aicommits",
+    "aicommit": "bin/aicommits",
+    "aicmt": "bin/aicommits",
+    "aic": "bin/aicommits"
+  },
+
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target=node --format=cjs --minify --sourcemap=none --external commander --external prompts",
+    "prepare": "bun run build"
+  },
+
   "dependencies": {
     "commander": "^13.1.0",
-    "dotenv": "^16.5.0",
     "prompts": "^2.4.2"
   },
+  
   "devDependencies": {
     "@types/node": "^22.14.1",
     "@types/prompts": "^2.4.9",
