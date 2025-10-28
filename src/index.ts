@@ -1,3 +1,4 @@
+// imports & config
 import { loadConfigIntoEnv, setKey, getKey, configPath } from './config'
 loadConfigIntoEnv() // fills process.env from ~/.config/aicommits/config.json if present
 
@@ -6,12 +7,18 @@ import prompts from 'prompts'
 import { getAICommitMessage, explainDiff } from './ai-utils'
 import { getStagedFiles, getStagedDiffForFiles, commitWithMessageForFiles } from './git-utils'
 
+// read version from package.json (so --version always matches)
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+const { version } = require('../package.json') as { version: string }
+
+// CLI
 const program = new Command()
 
 program
   .name('aicommits')
   .description('Generate Git commit messages using DeepSeek AI')
-  .version('0.2.0');
+  .version(version);
 
 async function maybeEdit(initial: string): Promise<string | null> {
   console.log(`\n🧠 Suggested commit message:\n"${initial}"\n`);
