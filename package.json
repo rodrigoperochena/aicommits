@@ -1,6 +1,6 @@
 {
   "name": "@taksumaq/aicommits",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny AI-powered Git commit assistant (~10 kB).",
   "keywords": [
     "git",
