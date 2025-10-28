@@ -48,7 +48,7 @@ Example of what you’ll see:
  ◯ src/index.ts
 
 🧠 Suggested commit message:
-"Update package.json metadata and dependencies
+"Update package.json metadata and dependencies"
 
 - Add description, keywords, author, and publish config
 - Remove dotenv dependency and external build reference
@@ -60,7 +60,7 @@ Example of what you’ll see:
   📝 Edit message before committing
   ❌ Cancel
 
-📦 Committing 1 file(s): "Update README with new installation, config, and usage instructions"
+📦 Committing 1 file(s): ""Update package.json metadata and dependencies"
 ```
 - Checklist of **staged** files → pick one or many.
 - AI suggests a message → **use** / **edit** / **cancel**.
