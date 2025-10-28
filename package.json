@@ -9,6 +9,7 @@
     "cli",
     "deepseek"
   ],
+  "type": "commonjs",
   "license": "MIT",
   "author": "Rodrigo Perochena",
   "repository": {
