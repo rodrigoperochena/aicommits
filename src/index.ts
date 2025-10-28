@@ -8,9 +8,9 @@ import { getAICommitMessage, explainDiff } from './ai-utils'
 import { getStagedFiles, getStagedDiffForFiles, commitWithMessageForFiles } from './git-utils'
 
 // read version from package.json (so --version always matches)
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url)
-const { version } = require('../package.json') as { version: string }
+declare const require: any;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { version } = require('../package.json') as { version: string };
 
 // CLI
 const program = new Command()
