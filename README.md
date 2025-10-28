@@ -43,12 +43,17 @@ Short aliases also work: `aicommit`, `aicmt`, `aic`.
 Example of what you’ll see:
 ```
 ? Select files to include in this commit (3 staged total) › Space to select • Enter to confirm
- ◉ README.md
- ◯ package.json
+ ◯ README.md
+ ◉ package.json
  ◯ src/index.ts
 
 🧠 Suggested commit message:
-"Update README with installation, config, and usage instructions"
+"Update package.json metadata and dependencies
+
+- Add description, keywords, author, and publish config
+- Remove dotenv dependency and external build reference
+- Reorganize fields for better readability
+- Specify package manager as bun@1.3.0"
 
 ? What do you want to do?
 > ✅ Use this message and commit
