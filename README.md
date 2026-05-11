@@ -1,6 +1,6 @@
 # @taksumaq/aicommits
 
-**Tiny AI-powered Git commit assistant (~12 kB on npm).**
+**Tiny AI-powered Git commit assistant**
 Generates commit messages (and explanations) for your **staged changes** using the DeepSeek API.
 
 [![npm](https://img.shields.io/npm/v/%40taksumaq%2Faicommits?color=blue)](https://www.npmjs.com/package/@taksumaq/aicommits)
@@ -8,7 +8,7 @@ Generates commit messages (and explanations) for your **staged changes** using t
 ---
 
 ## Why this CLI?
-- **Lightweight:** ~**12.8 kB** unpacked on npm.
+- **Lightweight**
 - **Zero-friction UX:** `aicommits` (no subcommand) runs the default **commit** flow.
 - **Focused messages:** scope to the staged files you select.
 - **Explain mode:** `aicommits explain` summarizes what changed.
