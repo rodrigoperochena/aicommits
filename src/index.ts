@@ -5,7 +5,7 @@ loadConfigIntoEnv() // fills process.env from ~/.config/aicommits/config.json if
 import { Command } from 'commander'
 import prompts from 'prompts'
 import { getAICommitMessage, explainDiff } from './ai-utils'
-import { getStagedFiles, getStagedDiffForFiles, commitWithMessageForFiles } from './git-utils'
+import { getStagedChanges, getStagedDiffForChanges, commitWithMessageForChanges } from './git-utils'
 
 // read version from package.json (so --version always matches)
 declare const require: any;
@@ -54,7 +54,7 @@ program
   .command('commit', { isDefault: true }) // default if no subcommand is given
   .description('Generate an AI-powered commit message and commit it')
   .action(async () => {
-    let remaining = await getStagedFiles()
+    let remaining = await getStagedChanges()
     if (!remaining.length) {
       console.log('⚠️ No staged changes found. Use `git add` first.')
       process.exit(0);
@@ -66,7 +66,7 @@ program
         type: 'multiselect',
         name: 'picked',
         message: `Select files to include in this commit (${remaining.length} staged total)`,
-        choices: remaining.map(f => ({ title: f, value: f })),
+        choices: remaining.map((change) => ({ title: change.title, value: change })),
         instructions: false,
         hint: 'Space to select • Enter to confirm'
       })
@@ -78,10 +78,10 @@ program
 
       // 2) Build a diff *only* for selected files
       console.log('🔍 Analyzing staged changes...')
-      const diff = await getStagedDiffForFiles(picked);
+      const diff = await getStagedDiffForChanges(picked);
       if (!diff.trim()) {
         console.log('⚠️ Selected files produced an empty diff. Try different files.');
-        remaining = await getStagedFiles();
+        remaining = await getStagedChanges();
         continue;
       }
 
@@ -96,10 +96,10 @@ program
       }
 
       // 5) Commit exactly those files with that message
-      await commitWithMessageForFiles(finalMessage, picked)
+      await commitWithMessageForChanges(finalMessage, picked)
 
       // Refresh remaining staged files and offer another round
-      remaining = await getStagedFiles();
+      remaining = await getStagedChanges();
       if (!remaining.length) {
         console.log('✅ All staged changes have been committed.');
         break;
@@ -125,7 +125,7 @@ program
   .command('explain')
   .description('Explain the staged changes using AI (pick files)')
   .action(async () => {
-    const files = await getStagedFiles();
+    const files = await getStagedChanges();
     if (!files.length) {
       console.log('⚠️ No staged changes found.');
       process.exit(0);
@@ -135,14 +135,14 @@ program
       type: 'multiselect',
       name: 'picked',
       message: `Select files to explain (${files.length} staged total)`,
-      choices: files.map(f => ({ title: f, value: f })),
+      choices: files.map((change) => ({ title: change.title, value: change })),
       instructions: false,
       hint: 'Space to select • Enter to confirm'
     });
 
     console.log('🔍 Analyzing staged changes...')
     const target = (picked && picked.length) ? picked : files;
-    const diff = await getStagedDiffForFiles(target);
+    const diff = await getStagedDiffForChanges(target);
     if (!diff.trim()) {
       console.log('⚠️ Empty diff.');
       process.exit(0);
